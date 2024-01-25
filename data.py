@@ -39,7 +39,7 @@ students = [
 
 levels = [4,2,3,5,7,8,2,6,4,3,5, 7, 5]
 
-populations2 = [
+centersPopulations = [
   { "id" : 0, "name" : "Alan" },
   { "id" : 1, "name" : "Albert" },
   { "id" : 2, "name" : "Jhon" },
