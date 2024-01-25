@@ -12,13 +12,13 @@ def addRelations():
                 
             elif relation[1] == user["id"]:
                 user["relation"].append(relation[0])
-    print(populations)
+    # print(populations)
 
 # Calculer la moyenne des relations.
 
 def averageRelations():
     average = sum(list(map(lambda pop : len(pop["relation"]), populations))) / len(populations)
-    print('Exercice 2 output: ', average)
+    # print('Exercice 2 output: ', average)
  
 
 # Créez une liste représentant les users (id) et le nombre de relation(s) qu'ils possèdent. Et retournez l'utilisateur qui possède le plus de relation(s).
@@ -31,19 +31,20 @@ def mostRelations():
         if len(user["relation"]) > highest:
             highest = len(user["relation"])
             userWithMostRelations = user["name"]
-    print('Exercice 3 output: The user with the most relations is', userWithMostRelations)
+    # print('Exercice 3 output: The user with the most relations is', userWithMostRelations)
 
 # Trouvez les amis des amis de chaque utilisateur.
 
 def friendsOfFriends():
     for user in populations:
-        user["friendsOfFriends"] = []
+        user["friendsOfFriend"] = []
 
         for relation in user["relation"]:
             for friend in populations[relation]["relation"]:
-                if friend not in user["friendsOfFriends"] and friend != user["id"]:
-                    user["friendsOfFriends"].append(friend)
-    print('Exercice 4 output: ', populations)
+                if friend not in user["friendsOfFriend"] and friend != user["id"]:
+                    user["friendsOfFriend"].append(friend)
+    # print('Exercice 4 output: ', populations)
+    return populations
 
 addRelations()
 averageRelations()
